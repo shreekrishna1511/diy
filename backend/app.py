@@ -2,11 +2,6 @@ from flask import Flask, request, jsonify
 import numpy as np
 import os
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
-
-
 app = Flask(__name__)
 
 def naca4_airfoil(m, p, t, c=1.0, n_points=100):
@@ -61,5 +56,7 @@ def generate():
     coords_list = coords.tolist()
     return jsonify({'coords': coords_list, 'gcode': gcode})
 
+# ✅ Modified for Render deployment
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
