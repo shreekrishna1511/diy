@@ -7,7 +7,6 @@ function App() {
   const [coords, setCoords] = useState([]);
   const [gcode, setGcode] = useState('');
   const [error, setError] = useState('');
- 
 
   const fetchData = async () => {
     setError('');
@@ -92,5 +91,18 @@ function App() {
           <button onClick={downloadGcode} style={{marginTop: '10px'}}>
             Download G-code File
           </button>
-          <pre style={{background: '#eee', padding: '10px', maxHeight: '200px', overflow: 'auto'}}>
+          <pre style={{
+            background: '#eee',
+            padding: '10px',
+            maxHeight: '200px',
+            overflow: 'auto'
+          }}>
             {gcode}
+          </pre>
+        </>
+      )}
+    </div>
+  );
+}
+
+export default App;
