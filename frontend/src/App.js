@@ -7,9 +7,7 @@ function App() {
   const [coords, setCoords] = useState([]);
   const [gcode, setGcode] = useState('');
   const [error, setError] = useState('');
-  cd frontend;
-npm run build;
-
+ 
 
   const fetchData = async () => {
     setError('');
